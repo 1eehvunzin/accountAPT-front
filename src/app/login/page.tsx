@@ -1,9 +1,9 @@
 "use client";
 
-//import { useState } from "react"
+import { useState } from "react";
 
 export default function Login() {
-  //const [hoveredButton, setHoveredButton] = useState<string | null>(null)
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-stone-100 flex flex-col items-center justify-between px-4 sm:px-6 py-8 sm:py-12">
@@ -119,9 +119,13 @@ export default function Login() {
         </button>
 
         <button
-          onMouseEnter={() => setHoveredButton("kakao")}
+          onMouseEnter={() => setHoveredButton("google")}
           onMouseLeave={() => setHoveredButton(null)}
-          className="w-full flex items-center justify-center gap-3 bg-[#FEE500] hover:bg-[#FDD800] py-3.5 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+          className={`w-full flex items-center justify-center gap-3 bg-white py-3.5 rounded-2xl shadow-md transition-all duration-300 border ${
+            hoveredButton === "google"
+              ? "shadow-xl border-slate-300 -translate-y-0.5"
+              : "border-slate-200"
+          }`}
         >
           <svg className="w-5 h-5" viewBox="0 0 24 24" fill="#000000">
             <path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.794 1.877 5.246 4.675 6.606-.194.714-.629 2.36-.717 2.74-.105.456.167.45.352.327.154-.103 2.455-1.635 3.381-2.256.754.104 1.53.158 2.309.158 5.523 0 10-3.477 10-7.8S17.523 3 12 3z" />
