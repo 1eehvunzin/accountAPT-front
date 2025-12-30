@@ -1,16 +1,20 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+//import { useState } from "react"
 
 export default function Login() {
-  const [hoveredButton, setHoveredButton] = useState<string | null>(null)
+  //const [hoveredButton, setHoveredButton] = useState<string | null>(null)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-stone-100 flex flex-col items-center justify-between px-4 sm:px-6 py-8 sm:py-12">
       {/* Title */}
       <div className="text-center mt-4 sm:mt-8 space-y-2">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">계정 아파트</h1>
-        <p className="text-sm sm:text-base text-slate-600 font-light tracking-wide">흩어진 계정들이 사는 곳</p>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+          계정 아파트
+        </h1>
+        <p className="text-sm sm:text-base text-slate-600 font-light tracking-wide">
+          흩어진 계정들이 사는 곳
+        </p>
       </div>
 
       {/* Apartment Illustration */}
@@ -34,7 +38,7 @@ export default function Login() {
             {[5, 4, 3, 2, 1].map((floor) => (
               <div key={floor} className="flex justify-center gap-4 sm:gap-5">
                 {[1, 2, 3].map((room) => {
-                  const isLit = floor >= 3
+                  const isLit = floor >= 3;
                   return (
                     <div
                       key={room}
@@ -46,13 +50,23 @@ export default function Login() {
                     >
                       {/* Window frame details */}
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className={`w-0.5 h-full ${isLit ? "bg-amber-200/40" : "bg-slate-500/40"}`} />
-                        <div className={`h-0.5 w-full absolute ${isLit ? "bg-amber-200/40" : "bg-slate-500/40"}`} />
+                        <div
+                          className={`w-0.5 h-full ${
+                            isLit ? "bg-amber-200/40" : "bg-slate-500/40"
+                          }`}
+                        />
+                        <div
+                          className={`h-0.5 w-full absolute ${
+                            isLit ? "bg-amber-200/40" : "bg-slate-500/40"
+                          }`}
+                        />
                       </div>
                       {/* Light glow effect */}
-                      {isLit && <div className="absolute inset-0 bg-amber-300/20 rounded-lg blur-sm" />}
+                      {isLit && (
+                        <div className="absolute inset-0 bg-amber-300/20 rounded-lg blur-sm" />
+                      )}
                     </div>
-                  )
+                  );
                 })}
               </div>
             ))}
@@ -132,5 +146,5 @@ export default function Login() {
         로그인 시 서비스 이용약관 및 개인정보 처리방침에 동의하게 됩니다.
       </p>
     </div>
-  )
+  );
 }
